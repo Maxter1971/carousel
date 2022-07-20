@@ -1,6 +1,19 @@
 import jQuery, { $ } from "jquery";
 
-export function slider() {
+export function slider(imgArr) {
+  imgArr.forEach((element) => {
+    console.log(element);
+    const slider = document.getElementById("slider ul");
+    const li = document.createElement("li");
+    li.setAttribute("id", "slider__ul__li");
+    const a = document.createElement("a");
+    const img = document.createElement("img");
+    img.src = element;
+    a.appendChild(img);
+    li.appendChild(a);
+    slider.appendChild(li);
+  });
+
   jQuery(document).ready(($) => {
     const slideCount = $("#slider ul li").length;
     const slideWidth = $("#slider ul li").width();
